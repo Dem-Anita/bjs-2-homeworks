@@ -8,15 +8,10 @@ function solveEquation(a, b, c) {
   let arr = [];
   let d = b ** 2 - 4 * a * c;
 
-  if (d < 0) {
-    arr = [];
-    console.log(`Корней нет: ${arr}`);
-  } else if (d === 0) {
+  if (d === 0) {
     arr = [-b / (2 * a)];
-    console.log(arr);
   } else if (d > 0) {
     arr = [(-b + Math.sqrt(d)) / (2 * a), (-b - Math.sqrt(d)) / (2 * a)];
-    console.log(arr);
   }
   return arr;
 }
@@ -33,8 +28,6 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   let payment = amount - contribution;
   let monthlyPayment = payment * (p + p / ((1 + p) ** countMonths - 1));
   let totalAmount = monthlyPayment * countMonths;
-  let result = +totalAmount.toFixed(2);
-  console.log(result);
-  return result;
+  return +totalAmount.toFixed(2);
 }
 calculateTotalMortgage(percent, contribution, amount, countMonths);
